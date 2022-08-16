@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+    <body>
+        <script>
+            setTimeout(myfunction, 5000);
+
+
+
+            function display(collect){
+
+           document.write("Withdrawal successful!<br><br>");
+
+          collect();
+
+
+
+        }
+
+
+
+          function myfunction(){
+
+          document.write("Thank you for using our service!");
+
+        }
+
+    var x = function () {  
+
+     document.write("Collect your card!<br><br>");
+
+      };
+            
+
+        </script>
+        <input type="button" value="Withdrawal" onclick="display(x);">
+
+    </body>
+</html>
+
