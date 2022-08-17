@@ -1,0 +1,469 @@
+<!doctype html>  
+<html lang="en">  
+<head>  
+  <meta charset="utf-8"  
+  <title>jQuery UI Accordion</title>  
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">  
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>  
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>  
+  <link rel="stylesheet" href="/resources/demos/style.css">  
+  <script>  
+  $(function() {  
+    $( "#accordion" ).accordion();  
+  });  
+
+  <!--Automation tags -->
+  $(function() {  
+    var availableTags = [  
+      "ActionScript",  
+      "AppleScript",  
+      "Asp",  
+      "BASIC",  
+      "C",  
+      "C++",  
+      "Clojure",  
+      "COBOL",  
+      "ColdFusion",  
+      "Erlang",  
+      "Fortran",  
+      "Groovy",  
+      "Haskell",  
+      "Java",  
+      "JavaScript",  
+      "Lisp",  
+      "Perl",  
+      "PHP",  
+      "Python",  
+      "Ruby",  
+      "Scala",  
+      "Scheme"  
+    ];  
+    $( "#tags" ).autocomplete({  
+      source: availableTags  
+    });  
+  }); 
+
+  <!-- Buttom tags-->
+
+  $(function() {  
+            $( "#button-1, #button-2, #button-3, #button-4" ).button();  
+            $( "#button-5" ).buttonset();  
+         });  
+  </script>  
+
+  <!-- datepicker -->
+  <script>  
+    $(function() {  
+       $( "#datepicker-1" ).datepicker();  
+    });  
+ </script> 
+
+ <!--dailog -->
+  <script>  
+    $(function() {  
+       $( "#dialog-1" ).dialog({  
+          autoOpen: false,    
+       });  
+       $( "#opener" ).click(function() {  
+          $( "#dialog-1" ).dialog( "open" );  
+       });  
+    });  
+ </script>  
+ 
+ <!--Menu-->
+ <script>  
+    $(function() {  
+       $( "#menu-1" ).menu();  
+    });  
+    </script>
+    <!--progress bar-->
+    <script>  
+        $(function() {  
+           $( "#progressbar-1" ).progressbar({  
+              value: 30  
+           });  
+        });  
+     </script> 
+       <script>  
+        $(function() {  
+           $( "#slider-2" ).slider({  
+              value: 60,  
+              animate:"slow",  
+              orientation: "horizontal"  
+           });  
+        });  
+     </script>
+     <!--Spinner -->
+     <style type="text/css">  
+        #spinner-1 input {width: 100px}  
+     </style>  
+
+     <script>  
+        $(function() {  
+           $( "#spinner-1" ).spinner();  
+        });  
+     </script>  
+          <script>  
+            $(function() {  
+               $( "#tabs-1" ).tabs();  
+            });  
+         </script>  
+         <style>  
+            #tabs-1{font-size: 14px;}  
+            .ui-widget-header {  
+               background:lightpink;  
+               border: 1px solid #b9cd6d;  
+               color: lightyellow;  
+               font-weight: bold;  
+            }  
+         </style> 
+         <!-- Tooltip -->
+         <script>  
+            $(function() {  
+            $("#tooltip-1").tooltip();  
+            $("#tooltip-2").tooltip();  
+            });  
+            </script> 
+               <style>  
+                .toggler-1 { width: 500px; height: 200px; }  
+                   #button-1 { padding: .5em 1em; text-decoration: none; }  
+                   #effect-1 { width: 240px; height: 160px; padding: 0.4em; position: relative; }  
+                   #effect-1 h3 { margin: 0; padding: 0.4em; text-align: center; }  
+             </style>  
+             <script>  
+                $(function() {  
+                   function runEffect() {  
+                      $( "#effect-1" ).hide( "shake", {times: 10, distance: 200}, 1000, callback );  
+                   };  
+                   // callback function to bring a hidden box back  
+                   function callback() {  
+                      setTimeout(function() {  
+                         $( "#effect-1" ).removeAttr( "style" ).hide().fadeIn();  
+                      }, 1000 );  
+                   };  
+                   // set effect from select menu value  
+                   $( "#button-1" ).click(function() {  
+                      runEffect();  
+                      return false;  
+                   });  
+                });  
+             </script>  
+              <style>  
+                .toggler { width: 500px; height: 200px; }  
+                #button { padding: .5em 1em; text-decoration: none; }  
+                #effect { width: 240px; height: 155px; padding: 0.4em; position: relative; }  
+                #effect h3 { margin: 0; padding: 0.4em; text-align: center; }  
+             </style>  
+             <!---->
+             <script>  
+                $(function() {  
+                   // run the currently selected effect  
+                   function runEffect() {  
+                      // run the effect  
+                      $( "#effect" ).show( "shake", {times: 15,distance: 200}, 1000, callback);  
+                   };  
+                   //callback function to bring a hidden box back  
+                   function callback() {  
+                      setTimeout(function() {  
+                         $( "#effect:visible" ).removeAttr( "style" ).fadeOut();  
+                      }, 1000 );  
+                   };  
+                   $( "#button" ).click(function() {  
+                      runEffect();  
+                      return false;  
+                   });  
+                   $( "#effect" ).hide();  
+                });  
+             </script>  
+             <style>  
+                .elemClass {  
+                   width: 300px;  
+                   height: 100px;  
+                   background-color: #76eec6;  
+                }  
+                .myClass {  
+                   font-size: 30px; background-color: #eed5b7; color: #0000ee;  
+                }  
+             </style>  
+             <script type="text/javascript">  
+                $(document).ready(function() {  
+                   $('.button').click(function() {  
+                      if (this.id == "add") {  
+                         $('#animTarget').addClass("myClass", "fast")  
+                      } else {  
+                      $('#animTarget').removeClass("myClass", "fast")  
+                      }  
+                   })  
+                });  
+             </script>  
+                 <style>  
+                    .elemClass {  
+                       width: 300px;  
+                       height: 100px;  
+                       background-color: #76eec6;  
+                    }  
+                    .myClass {  
+                       font-size: 30px; background-color: #eed5b7; color: #0000ee;  
+                    }  
+                 </style>  
+                 <script type="text/javascript">  
+                    $(document).ready(function() {  
+                       $('.button').click(function() {  
+                          if (this.id == "add") {  
+                             $('#animTarget').addClass("myClass", "fast")  
+                          } else {  
+                          $('#animTarget').removeClass("myClass", "fast")  
+                          }  
+                       })  
+                    });  
+                 </script>
+                 <!--UI Switch Case-->
+                      <!-- CSS -->  
+      <style>  
+        .LargeClass  
+        {  
+           font-family: NewTimesRoman;  
+           font-size: large;  
+           font-weight: bold;  
+           color: Red;  
+        }  
+        .NormalClass  
+        {  
+           font-family: Arial;  
+           font-size: small;  
+           font-weight: bold;  
+           color: Blue;  
+        }  
+     </style>  
+     <script>  
+        $(function() {  
+           $('#btnSwitch').click(function(){  
+              $(".NormalClass").switchClass("NormalClass","LargeClass",'fast');  
+              $(".LargeClass").switchClass("LargeClass","NormalClass",'fast');  
+              return false;  
+           });  
+        });  
+     </script>
+
+     <!--Color Animation-->
+     <style>  
+        .elemClass {  
+       width: 200px;  
+       height: 50px;  
+       background-color: #b9cd6d;  
+       }  
+       .myClass {  
+       font-size: 40px; background-color: #ccc; color: white;  
+       }  
+       </style>  
+       <script type="text/javascript">  
+       $(document).ready(function() {  
+       $('#button-1').click(function() {  
+       $('#animTarget').animate({  
+       backgroundColor: "red",  
+       color: "white"  
+       })  
+        })  
+       });  
+       </script>  
+       <!-- Effect -->
+         <style>  
+            #box-1 {  
+               height: 50px;  
+               width: 100px;  
+               background: #7fffd4;  
+            }  
+         </style>  
+         <script>  
+            $(document).ready(function() {  
+               $('#box-1').click(function() {  
+                  $( "#box-1" ).effect( "shake", {  
+                     times: 10,  
+                     distance: 150  
+                  }, 3000, function() {  
+                  $( this ).css( "background", "#ff4040" );  
+               });  
+            });  
+         });  
+   </script>  
+             
+ 
+</head>  
+<body>  
+<div id="accordion">  
+  <h3>What is Java?</h3>  
+  <div>  
+    <p>  
+   Java is a simple, object oriented, concurrent and general purpose programming language.   
+  Some other important features of java are robust, secure, portable, interactive and high performance.   
+  Java was developed by Sun Microsystems in 1995 since then it has become very popular due to its feature  
+   like platform independent and robust in the case of memory management.  
+    </p>    
+  </div>  
+  <h3>Why is it called platform?</h3>  
+  <div>  
+    <p>  
+   Because java has its own run time environment (JRE) and API so it is called platform.  
+    </p>  
+  </div>  
+   </div>
+   <br>
+   <br>
+   <h1>Automation</h1>
+  <div class="ui-widget">  
+    <p>Available Courses:</p>  
+     <label for="tags">Tags: </label>  
+     <input id="tags">  
+   </div> 
+   <br>
+   <br>
+
+   <h1>Jquery Button </h1>
+   
+   <button id="button-1">A button element</button>  
+   <input id="button-2" type="submit" value="A submit button">  
+   <a id="button-3" href="">An anchor</a>  
+   <input type="checkbox"  id="button-4" >  
+   <label for="button-4">Toggle</label>  
+   <br><br>  
+   <div id="button-5">  
+      <input type="checkbox" id="check1">  
+      <label for="check1">Left</label>  
+      <input type="checkbox" id="check2">  
+      <label for="check2">Middle</label>  
+      <input type="checkbox" id="check3">  
+      <label for="check3">Right</label>  
+   </div>  
+<br>
+<h1>jQuery UI Datepicker functionality</h1>
+<p>Enter Date: <input type="text" id="datepicker-1"></p>  
+<br>
+<br>
+<h1>jQuery UI Dialog</h1>
+<div id="dialog-1" title="Movie Title:Psycho (1960)">"A boy's best friend is his mother." </div>  
+      <button id="opener">Open Dialog</button>  
+<br>
+<br>
+<h1>Menu</h1>
+<ul id="menu-1">  
+    <li><a href="#">C</a></li>  
+    <li><a href="#">C++</a></li>  
+    <li><a href="#">Java</a>  
+       <ul>  
+          <li><a href="#">Core Java</a></li>  
+          <li><a href="#">J2EE</a></li>  
+          <li><a href="#">Spring</a></li>  
+          <li><a href="#">Hibernate</a></li>  
+          <li><a href="#">Struts</a></li>  
+       </ul>  
+    </li>  
+    <li><a href="#">JSF</a></li>  
+    <li><a href="#">HTML5</a></li>  
+ </ul>  
+ <br>
+ <h1> progressbar </h1>
+ <div id="progressbar-1"></div>   <br><br>
+   <h1>slider </h1>
+<div id="slider-2"></div>
+<br>
+<br>
+<h1>spinner</h1>
+<div id="example">  
+    <input type="text" id="spinner-1" value="0" />  
+ </div>  
+ <div id="tabs-1">  
+    <ul>  
+       <li><a href="#tabs-2">Poem</a></li>  
+       <li><a href="#tabs-3">Joke</a></li>  
+       <li><a href="#tabs-4">Quote</a></li>  
+    </ul>  
+    <div id="tabs-2">  
+       <p>Twinkle, twinkle, little star,<br/>  
+How I wonder what you are.<br/>  
+Up above the world so high,<br/>  
+Like a diamond in the sky.<br/>  
+Twinkle, twinkle, little star,<br/>  
+How I wonder what you are!<br/>  
+</p>  
+    </div>  
+    <div id="tabs-3">  
+<p>Man said to God --- Why did you make women so beautiful?<br/>  
+God said to man --- So that you will love them.<br/>  
+Man said to God --- But why did you make them so dumb?<br/>   
+God said to man --- So that they will love you.<br/> </p>  
+    </div>  
+    <div id="tabs-4">  
+       <p>" The whole secret of existence is to have no fear."  
+Buddha</p>  
+    </div>  
+ </div>  
+ <label for="comment">What is your comment:</label>  
+<input id="tooltip-1" title="We are asking your comment just for feedback">  
+<p><a id="tooltip-2" href="#" title="JavaTpoint is the best tutorial website.">  
+I also have a tooltip  
+</a></p>  
+
+<h1>ui hide </h1>
+<div class="toggler-1">  
+    <div id="effect-1" class="ui-widget-content ui-corner-all">  
+       <h3 class="ui-widget-header ui-corner-all">Hide</h3>  
+       <p>  
+          JavaTpoint provides easy and point to point learning of various tutorials   
+         such as Java Tutorial, Core Java Tutorial, Android, Design Pattern, JavaScript,   
+        AJAX, SQL, Cloud Computing, Python etc.  
+       </p>  
+    </div>  
+    </div>  
+    <a href="#" id="button-1" class="ui-state-default ui-corner-all">Shake Effect Hide</a> 
+    <br>
+    <br>
+    <h1>UI show </h1>
+    <div class="toggler">  
+        <div id="effect" class="ui-widget-content ui-corner-all">  
+           <h3 class="ui-widget-header ui-corner-all">Show</h3>  
+           <p>  
+            JavaTpoint provides easy and point to point learning of various tutorials such as   
+            Java Tutorial, Core Java Tutorial, Android, Design Pattern, JavaScript, AJAX, Python etc.  
+           </p>  
+        </div>  
+     </div>  
+     <a href="#" id="button" class="ui-state-default ui-corner-all">Show method with Shake effect</a> 
+     
+     <br><br>
+     <h1> UI add class </h1>
+     <div id=animTarget class="elemClass">  
+        Hello! Bhavna Corp 
+     </div>  
+     <button class="button" id="add">Add Class</button>  
+     <button class="button" id="remove">Remove Class</button>  
+     <br>
+     <br>
+     <h1> UI remove class</h1>
+     <div id=animTarget class="elemClass">  
+        Hello! Bhavna Corp  
+     </div>  
+     <h1>Switch case</h1>
+     <button class="button" id="add">Add Class</button>  
+     <button class="button" id="remove">Remove Class</button>  
+     <div class="NormalClass">  
+        You are here at Bhavna corp  
+      </div>  
+      <div class="NormalClass">  
+      Bhavna is commited to provide easy solution.
+      </div>  
+      <br />  
+      <input type="button" id="btnSwitch" value="Switch Class" />
+      
+      <h1>color Animation</h1>
+
+      <div id=animTarget class="elemClass">  
+        Hello allien </div>  
+        <button id="button-1">Click Me</button>  
+
+        <br>
+        <h1>Effect</h1>
+        <div id="box-1">Click here to<br/><b>Shake Me!</b></div> 
+     
+
+ </body>  
+</html>  
